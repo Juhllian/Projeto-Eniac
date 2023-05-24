@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <title>Cadastro de clientes</title>
+            <link rel="stylesheet" href="validacao.css">
+    </head>
+    <body>
+
+        <div class="length"> 
+            
+            <center>
+                <img src="imagem_logo_home.jpg"> 
+            </center>
+           
+            <nav id="menu">
+                <ul>
+                    <li> 
+                    <a href="Home.html.html">HOME </a>
+                    </li>
+                    <li> 
+                    <a href="Produto.html.html">PRODUTOS </a>
+                    </li>
+                    <li> 
+                    <a href="Contato.html.html">CONTATO </a>
+                    </li>  
+                </ul>
+            </nav>
+ 
+            
+            <header>
+                <FONT COLOR="navy"> 
+          
+                <center>
+                <h3> CADASTRO DE CLIENTES</h3>
+              </center>
+            </FONT>
+              </header>
+
+
+
+            <center>
+              <h4>Preencha os campos abaixo:</h4>
+
+               <form name="form1" method="post" action="grava.jsp" >
+                    
+                    Nome:
+                    <input type="text" name="txtNome" > 
+                    <br>
+                    <br>
+        
+                    CPF:
+                    <input type="text" name="txtCPF" > 
+                    <br>
+                    <br>
+        
+                    Telefone:
+                    <input type="text" name="txtTelefone" > 
+                    <br>
+                    <br>
+        
+                    E-mail:
+                    <input type="text" name="txtEmail" > 
+                    <br>
+                    <br>
+        
+                    <input type="submit" value="Gravar">
+               </form>
+
+
+
+            <script>
+                function verificar()
+                {
+                    var enviar = true ;
+        
+                    var n = document.form1.txtNome.value ;
+                    if( n.length == 0 )
+                    {
+                        enviar = false ;
+                        document.querySelector("#erroNome").textContent = "Preencha o campo Nome" ;
+                    }
+        
+                    var c = document.form1.txtCPF.value ;
+                    if( isNaN(c)  ||  c.length == 0 )
+                    {
+                        enviar = false ;
+                        document.querySelector("#erroCPF").textContent = "Preencha corretamente o campo CPF" ;
+                    }
+        
+                    var e = document.form1.txtEmail.value ;
+                    if( e.indexOf("@") < 0  )
+                    {
+                    enviar = false ;
+                    document.querySelector("#erroEmail").textContent = "Preencha corretamente o campo Email" ;
+                    }
+
+                    var t = document.form1.txtTelefone.value ;
+                    if( isNaN(t)  ||  t.length == 0 )
+                    {
+                        enviar = false ;
+                        document.querySelector("#erroTelefone").textContent = "Preencha corretamente o campo Telefone" ;
+                    }
+
+        
+        
+                    if(enviar)
+                    {
+                        document.form1.submit();
+                    }
+                }
+            </script>
+
+            </center>
+         
+    </div>
+
+    </body>
+</html>

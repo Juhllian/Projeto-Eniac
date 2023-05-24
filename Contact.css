@@ -1,0 +1,32 @@
+
+#menu{
+    background-color:  rgba(227, 82, 82, 0.886);
+     }
+
+body {
+    color: BLACK;
+    background-color: whitesmoke ;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+    padding: 25px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+img {
+    width: 1300px;
+    height: 150px;
+}
+
+.length {
+    padding: 30px 100px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form name="form1" method="post" action="grava.jsp">    
+
+        Nome :
+        <input type="text" name="txtNome" >
+        <span id="erroNome"></span>
+        <br>
+        <br>
+
+        CPF :
+        <input type="text" name="txtCPF">
+        <span id="erroCPF"></span>
+        <br>
+        <br>
+
+        Email :
+        <input type="text" name="txtEmail">
+        <span id="erroEmail"></span>
+        <br>
+        <br>
+
+        Telefone :
+        <input type="text" name="txtTelefone">
+        <span id="erroTelefone"></span>
+        <br>
+        <br>
+
+        Mensagem :
+        <input type="text" name="txtMensagem">
+        <span id="erroMensagem"></span>
+        <br>
+        <br>
+
+        <input type="button" value="Salvar" onclick="verificar()">
+    </form>
+
+    <script>
+        function verificar()
+        {
+            var enviar = true ;
+
+            var n = document.form1.txtNome.value ;
+            if( n.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroNome").textContent = "Preencha o campo Nome" ;
+            }
+
+            var c = document.form1.txtCPF.value ;
+            if( isNaN(c)  ||  c.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroCPF").textContent = "Preencha corretamente o campo CPF" ;
+            }
+
+            var e = document.form1.txtEmail.value ;
+            if( e.indexOf("@") < 0  )
+            {
+            enviar = false ;
+            document.querySelector("#erroEmail").textContent = "Preencha corretamente o campo Email" ;
+            }
+
+            var t = document.form1.txtTelefone.value ;
+            if( isNaN(t)  ||  t.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroTelefone").textContent = "Preencha corretamente o campo Telefone" ;
+            }
+
+            var m = document.form1.txtMensagem.value ;
+            if( m.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroMensagem").textContent = "Preencha o campo mensagem" ;
+            }
+
+
+            if(enviar)
+            {
+                document.form1.submit();
+            }
+        }
+    </script>
+
+</body>
+</html>s
